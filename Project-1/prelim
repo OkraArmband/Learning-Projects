@@ -4,4 +4,18 @@ def Reverse(strng):
 def isPalindrome(strng):
     return strng == Reverse(strng)
 
-print(isPalindrome('raecar'))
+def calcPi(digits):
+    Pi = 3
+    count = 0
+    sgn = 1
+    init_denom = 2
+    while count <= digits:
+        denom = init_denom*(init_denom+1)*(init_denom+2)
+        Pi = Pi+sgn*4/denom
+        denom += 2
+        count += 1
+        sgn *= -1
+    return Pi
+
+
+print(calcPi(2100))
