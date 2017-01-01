@@ -18,4 +18,3 @@ def calcPi(digits):
     return Pi
 
 
-print(calcPi(2100))
