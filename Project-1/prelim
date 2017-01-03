@@ -1,3 +1,5 @@
+from math import *
+
 def Reverse(strng):
     return strng[::-1]
 
@@ -9,12 +11,11 @@ def calcPi(digits):
     count = 0
     sgn = 1
     init_denom = 2
-    while count <= digits:
-        denom = init_denom*(init_denom+1)*(init_denom+2)
-        Pi = Pi+sgn*4/denom
-        denom += 2
+    tol = 10**(-digits-1)
+    while abs(Pi-pi) >= tol:
+        Pi += sgn*4/(init_denom*(init_denom+1)*(init_denom+2))
+        init_denom += 2
         count += 1
         sgn *= -1
     return Pi
-
 
